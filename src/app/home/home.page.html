@@ -1,20 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="primary" [myScrollVanish]="scrollArea">
+    <ion-title> Browse Animals </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
+  <ion-segment>
+    <ion-segment-button> Cats </ion-segment-button>
+    <ion-segment-button> Dogs </ion-segment-button>
+    <ion-segment-button> Snakes </ion-segment-button>
+    <ion-segment-button> Hamsters </ion-segment-button>
+  </ion-segment>
 </ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content #scrollArea scrollEvents="true">
+  <ion-list>
+    <ion-item *ngFor="let test of tests">
+      <a href="http://thecatapi.com"
+        ><img src="http://thecatapi.com/api/images/get?format=src&type=gif"
+      /></a>
+    </ion-item>
+  </ion-list>
 </ion-content>
